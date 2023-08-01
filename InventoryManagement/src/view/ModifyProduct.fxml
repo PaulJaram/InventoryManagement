@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="982.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeecec" height="547.0" layoutX="13.0" layoutY="14.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="954.0" />
+            <Label layoutX="56.0" layoutY="35.0" text="Modify Product">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="83.0" layoutY="132.0" text="ID" />
+            <Label layoutX="79.0" layoutY="165.0" text="Name" />
+            <Label layoutX="80.0" layoutY="201.0" text="Inv" />
+            <Label layoutX="78.0" layoutY="239.0" text="Price" />
+            <Label layoutX="78.0" layoutY="273.0" text="Max" />
+            <Label layoutX="248.0" layoutY="273.0" text="Min" />
+            <TextField fx:id="productIdTF" editable="false" focusTraversable="false" layoutX="129.0" layoutY="128.0" mouseTransparent="true" opacity="0.5" pickOnBounds="false" />
+            <TextField fx:id="productNameTF" layoutX="128.0" layoutY="161.0" />
+            <TextField fx:id="productInvTF" layoutX="128.0" layoutY="196.0" prefHeight="25.0" prefWidth="94.0" />
+            <TextField fx:id="productPriceTF" layoutX="128.0" layoutY="233.0" prefHeight="25.0" prefWidth="94.0" />
+            <TextField fx:id="productMaxTF" layoutX="127.0" layoutY="269.0" prefHeight="25.0" prefWidth="94.0" />
+            <TextField fx:id="productMinTF" layoutX="304.0" layoutY="267.0" prefHeight="25.0" prefWidth="94.0" />
+            <Button fx:id="addAssocPart" layoutX="764.0" layoutY="267.0" mnemonicParsing="false" onAction="#onAddAssocPart" text="Add" />
+            <TableView fx:id="allPartsTable" layoutX="528.0" layoutY="92.0" prefHeight="164.0" prefWidth="388.0">
+               <columns>
+                  <TableColumn fx:id="allPartsIDCol" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="allPartsNameCol" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="allPartsInventoryCol" prefWidth="94.0" text="Inventory Level" />
+                  <TableColumn fx:id="allPartsPriceCol" prefWidth="143.0" text="Price/Cost Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="removeAssocPart" layoutX="709.0" layoutY="480.0" mnemonicParsing="false" onAction="#onRemoveAssocPart" text="Remove Associated Item" />
+            <TableView fx:id="assocPartsTable" layoutX="528.0" layoutY="305.0" prefHeight="164.0" prefWidth="388.0">
+               <columns>
+                  <TableColumn fx:id="assocPartsIDCol" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="assocPartsNameCol" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="assocPartsInventoryCol" prefWidth="94.0" text="Inventory Level" />
+                  <TableColumn fx:id="assocPartsPriceCol" prefWidth="143.0" text="Price/Cost Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="saveProduct" layoutX="709.0" layoutY="527.0" mnemonicParsing="false" onAction="#onSaveProduct" text="Save" />
+            <Button fx:id="cancelProduct" layoutX="801.0" layoutY="527.0" mnemonicParsing="false" onAction="#onCancelProduct" text="Cancel" />
+            <TextField fx:id="partsSearch" layoutX="753.0" layoutY="55.0" onAction="#onPartsSearch" promptText="Search By Part ID or Name" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
